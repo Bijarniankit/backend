@@ -5,8 +5,8 @@ const usercontroller = {
 	profile: async (req, res) => {
 		try {
 			const userID = req.user._id;
-			const user = await User.findById(userID);
-			
+			const user = await User.findById(userID).lean();
+			delete user.password;			
 			if (!user) {
 				return res.status(404).json({ message: 'User not found' });
 			}
