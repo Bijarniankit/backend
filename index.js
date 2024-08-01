@@ -15,6 +15,10 @@ app.use(express.json());
 app.use('/api/auth', authroutes);
 app.use('/api/user', auth, userroutes);
 
+app.get('/', (req, res) => {
+    res.send('Welcome to the API');
+})
+
 connectDB();
 app.listen(port,()=>{
     console.log(`Server is running on port ${port}`)
