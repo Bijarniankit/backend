@@ -5,6 +5,8 @@ import connectDB from './config/dbconn.js';
 import authroutes from './routes/authroutes.js';
 import userroutes from './routes/userroutes.js';
 import auth from './middleware/authmiddleware.js';
+import validate from './middleware/validationMiddleware.js';
+
 
 dotenv.config();
 const app = express();
